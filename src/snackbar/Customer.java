@@ -1,21 +1,53 @@
 package snackbar;
 
-/*
-fields:
-- maxId: keep track of last used customer id
-- id: automatically generated
-- name
-- cash on hand
-
-methods:
-- get id
-- set and get name
-- add cash to cash on hand
-- get cash on hand
-- but snacks
-  - Given the total cost of the snacks to be purchased, reduce the cash on hand by that amount
-*/
-
 public class Customer {
-  
+
+  // fields
+  private int maxId = 0;
+  private int id;
+  private String name;
+  private double cashOnHand;
+
+  // constructor
+  public Customer(String name, double cashOnHand) {
+    maxId++;
+    id = maxId;
+
+    this.name = name;
+    this.cashOnHand = cashOnHand;
+  }
+
+  // get id
+  public int getId() {
+    return id;
+  }
+
+  // set name
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  // get name
+  public String getName() {
+    return name;
+  }
+
+  // add cash to cash on hand (set cash)
+  public void addCash(double cash) {
+    this.cashOnHand = cash;
+  }
+
+  // get cash on hand
+  public double getCash() {
+    return cashOnHand;
+  }
+
+  /*
+   * buy snacks - Given the total cost of the snacks to be purchased, reduce the
+   * cash on hand by that amount
+   */
+  public double buySnacks(double totalCost) {
+    return cashOnHand -= totalCost;
+  }
+
 }
