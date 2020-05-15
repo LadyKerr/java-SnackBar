@@ -33,8 +33,8 @@ public class Customer {
   }
 
   // add cash to cash on hand (set cash)
-  public void addCash(double cash) {
-    this.cashOnHand = cash;
+  public double addCash(double cash) {
+    return this.cashOnHand = cash;
   }
 
   // get cash on hand
